@@ -19,5 +19,10 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
+        stage('MVN SONARQUAR'){
+	steps {
+		sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=EmnaBorgi21& -Dmaven.test.skip=true';
+	}
+}
     }
 }
