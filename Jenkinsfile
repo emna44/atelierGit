@@ -19,6 +19,9 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
-        
+        stage('MVN SONARQUAR'){
+		    steps {
+                sh 'mvn sonar:sonar -Dsonar.login=squ_d18d01804e6c9683c7fe84db28b26c4027a8d6fe -Dmaven.test.skip=true'		}
+	}
     }
 }
